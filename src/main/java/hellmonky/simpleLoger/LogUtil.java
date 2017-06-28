@@ -61,4 +61,9 @@ public class LogUtil {
     public void error(String content){
         logger.error(content);
     }
+
+    public void error(String content, Exception e){
+        logger.error(content,e);
+    }
+
 }

@@ -1,5 +1,13 @@
 package hellmonky.simpleLoger;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.InputStream;
+
+import org.apache.log4j.PropertyConfigurator;
+import org.slf4j.LoggerFactory;
+
 /**
  * Created by yuanlai.xwt on 2017/6/28.
  */
@@ -13,5 +21,17 @@ public class TestLogService {
         logger.info("This is info message.");
         // 记录error级别的信息
         logger.error("This is error message.");
+
+        // stackTrace log
+        try{
+            String proPath = LogUtil.class.getClassLoader().
+                getResource("log4.properties").getPath();
+            File initialFile = new File(proPath);
+            InputStream inputStream = new FileInputStream(initialFile);
+        } catch (FileNotFoundException e){
+            logger.error( "file is not exist!", e );
+        } catch (NullPointerException e) {
+            logger.error( "null point error!", e );
+        }
     }
 }
