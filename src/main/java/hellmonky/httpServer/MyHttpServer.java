@@ -1,13 +1,18 @@
 package hellmonky.httpServer;
 
+import java.io.BufferedReader;
 import java.io.DataInputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.nio.Buffer;
+
+import com.fasterxml.jackson.core.util.BufferRecycler;
 
 /**
  * Created by yuanlai.xwt on 2017/6/22.
@@ -45,10 +50,14 @@ public class MyHttpServer {
     }
     //处理post请求
     private void doPost(DataInputStream reader, OutputStream out) throws Exception {
-        String line = reader.readLine();
+        //
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(reader));
+        String line = bufferedReader.readLine();
+        //String line = reader.readLine();
         while (line != null) {
             System.out.println(line);
-            line = reader.readLine();
+            line = bufferedReader.readLine();
+            //line = reader.readLine();
             if ("".equals(line)) {
                 break;
             } else if (line.indexOf("Content-Length") != -1) {
@@ -97,10 +106,18 @@ public class MyHttpServer {
     //处理附件
     private void doMultiPart(DataInputStream reader, OutputStream out) throws Exception {
         System.out.println("doMultiPart ......");
-        String line = reader.readLine();
+
+        // 替换DataInputStream的readLine方法
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(reader));
+        String line = bufferedReader.readLine();
+        // String line = reader.readLine();
+
+
         while (line != null) {
             System.out.println(line);
-            line = reader.readLine();
+            // replace
+            line = bufferedReader.readLine();
+            //line = reader.readLine();
             if ("".equals(line)) {
                 break;
             } else if (line.indexOf("Content-Length") != -1) {
@@ -197,8 +214,14 @@ public class MyHttpServer {
         while (true) {
             Socket socket = serverSocket.accept();
             System.out.println("new request coming.");
+
+            // replace DataInputStream.readLine() Deprecated.
             DataInputStream reader = new DataInputStream((socket.getInputStream()));
-            String line = reader.readLine();
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(reader));
+            String line = bufferedReader.readLine();
+            //DataInputStream reader = new DataInputStream((socket.getInputStream()));
+            //String line = reader.readLine();
+
             String method = line.substring(0, 4).trim();
             OutputStream out = socket.getOutputStream();
             this.requestPath = line.split(" ")[1];
