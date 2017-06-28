@@ -1,6 +1,5 @@
 .gradle/
 .idea/
 build/
-apsara_stack_proxy.iml
+JOJO.iml
 target/
-apsara-stack.iml

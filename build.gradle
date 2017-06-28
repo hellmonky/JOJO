@@ -26,7 +26,6 @@ dependencies {
 
 // Jersey libs
 dependencies {
-//    compile "javax.ws.rs:jsr311-api:1.1.1"
     compile 'org.glassfish.jersey.core:jersey-common:2.25.1'
     compile 'org.glassfish.jersey.core:jersey-server:2.25.1'
     compile 'org.glassfish.jersey.core:jersey-client:2.25.1'
@@ -35,7 +34,6 @@ dependencies {
     // https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-moxy
     compile group: 'org.glassfish.jersey.media', name: 'jersey-media-moxy', version: '2.25.1'
     compile 'org.glassfish.jersey.media:jersey-media-json-jackson:2.25.1'
-    //compile 'org.glassfish.jersey.containers:jersey-container-servlet-core:2.25.1'
     compile 'org.glassfish.jersey.containers:jersey-container-servlet:2.25.1'
     testCompile "junit:junit-dep:4.10"
 }
@@ -60,15 +58,6 @@ dependencies {
     // https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils
     compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.3'
 }
-//aliyun-java-sdk-
-dependencies {
-    // https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-core
-    compile group: 'com.aliyun', name: 'aliyun-java-sdk-core', version: '3.2.2'
-    // https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-rds
-    compile group: 'com.aliyun', name: 'aliyun-java-sdk-rds', version: '2.1.0'
-    // https://mvnrepository.com/artifact/com.aliyun.openservices/tablestore
-    compile group: 'com.aliyun.openservices', name: 'tablestore', version: '4.2.1'
-}
 
 //alibaba-druid
 dependencies{
@@ -82,10 +71,8 @@ dependencies{
 dependencies{
     // https://mvnrepository.com/artifact/redis.clients/jedis
     compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
-//    // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on
+	// https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on
     compile group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.52'
-//    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
-//    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.1'
     // https://mvnrepository.com/artifact/cglib/cglib
     compile group: 'cglib', name: 'cglib', version: '3.2.5'
 }
