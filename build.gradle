@@ -1,0 +1,99 @@
+apply plugin: 'java'
+apply plugin: 'idea'
+apply plugin: 'war'
+apply plugin: 'org.akhikhl.gretty'
+
+//配置插件仓库
+buildscript {
+    repositories {
+        mavenCentral()
+        jcenter()
+    }
+    dependencies {
+        classpath 'org.akhikhl.gretty:gretty:1.2.4'
+    }
+}
+compileJava.options.encoding = 'UTF-8'
+
+repositories {
+    mavenCentral()
+}
+
+// jedis lib for aliyun_redis
+dependencies {
+    compile 'redis.clients:jedis:2.9.0'
+}
+
+// Jersey libs
+dependencies {
+//    compile "javax.ws.rs:jsr311-api:1.1.1"
+    compile 'org.glassfish.jersey.core:jersey-common:2.25.1'
+    compile 'org.glassfish.jersey.core:jersey-server:2.25.1'
+    compile 'org.glassfish.jersey.core:jersey-client:2.25.1'
+    // https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-multipart
+    compile group: 'org.glassfish.jersey.media', name: 'jersey-media-multipart', version: '2.25.1'
+    // https://mvnrepository.com/artifact/org.glassfish.jersey.media/jersey-media-moxy
+    compile group: 'org.glassfish.jersey.media', name: 'jersey-media-moxy', version: '2.25.1'
+    compile 'org.glassfish.jersey.media:jersey-media-json-jackson:2.25.1'
+    //compile 'org.glassfish.jersey.containers:jersey-container-servlet-core:2.25.1'
+    compile 'org.glassfish.jersey.containers:jersey-container-servlet:2.25.1'
+    testCompile "junit:junit-dep:4.10"
+}
+
+// rest-assured libs
+dependencies {
+    compile 'io.rest-assured:xml-path:3.0.2'
+    compile 'io.rest-assured:json-path:3.0.2'
+    compile 'io.rest-assured:rest-assured:3.0.2'
+    testCompile 'io.rest-assured:json-schema-validator:3.0.2'
+}
+
+// common-tools libs
+dependencies {
+    compile 'org.apache.commons:commons-lang3:3.4'
+    // https://mvnrepository.com/artifact/org.asynchttpclient/async-http-client
+    compile group: 'org.asynchttpclient', name: 'async-http-client', version: '2.0.24'
+    // https://mvnrepository.com/artifact/com.google.code.gson/gson
+    compile group: 'com.google.code.gson', name: 'gson', version: '2.2.4'
+    // https://mvnrepository.com/artifact/dom4j/dom4j
+    compile group: 'dom4j', name: 'dom4j', version: '1.6.1'
+    // https://mvnrepository.com/artifact/commons-beanutils/commons-beanutils
+    compile group: 'commons-beanutils', name: 'commons-beanutils', version: '1.9.3'
+}
+//aliyun-java-sdk-
+dependencies {
+    // https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-core
+    compile group: 'com.aliyun', name: 'aliyun-java-sdk-core', version: '3.2.2'
+    // https://mvnrepository.com/artifact/com.aliyun/aliyun-java-sdk-rds
+    compile group: 'com.aliyun', name: 'aliyun-java-sdk-rds', version: '2.1.0'
+    // https://mvnrepository.com/artifact/com.aliyun.openservices/tablestore
+    compile group: 'com.aliyun.openservices', name: 'tablestore', version: '4.2.1'
+}
+
+//alibaba-druid
+dependencies{
+    // https://mvnrepository.com/artifact/com.alibaba/druid
+    compile group: 'com.alibaba', name: 'druid', version: '1.0.31'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '6.0.3'
+}
+
+//jedis
+dependencies{
+    // https://mvnrepository.com/artifact/redis.clients/jedis
+    compile group: 'redis.clients', name: 'jedis', version: '2.9.0'
+//    // https://mvnrepository.com/artifact/org.bouncycastle/bcprov-jdk15on
+    compile group: 'org.bouncycastle', name: 'bcpkix-jdk15on', version: '1.52'
+//    // https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient
+//    compile group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.5.1'
+    // https://mvnrepository.com/artifact/cglib/cglib
+    compile group: 'cglib', name: 'cglib', version: '3.2.5'
+}
+
+gretty {
+    port=8080
+    contextPath = '/'
+    scanInterval=0
+    debugPort = 5005
+    debugSuspend = true
+}
