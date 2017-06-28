@@ -5,8 +5,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
-import hellmonky.annotationVerification.AnnotationCheckerUtil;
-import hellmonky.annotationVerification.test.TestAnnotationBean;
+import hellmonky.functor.annotationVerification.AnnotationCheckerUtil;
+import hellmonky.functor.annotationVerification.test.TestAnnotationBean;
 
 /**
  * Created by yuanlai.xwt on 2017/6/27.

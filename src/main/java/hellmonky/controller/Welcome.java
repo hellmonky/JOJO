@@ -1,8 +1,10 @@
-package aliyun.controller;
+package hellmonky.controller;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
+import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
+import javax.ws.rs.QueryParam;
 import javax.ws.rs.core.MediaType;
 
 /**
@@ -89,7 +91,13 @@ public class Welcome {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public String listPhysicalHost() {
-        return this.welcomeStr;
+    @Path("{name}")
+    public String listPhysicalHost(@PathParam("name") String name) {
+        if(null==name || name.equals("")){
+            return this.welcomeStr;
+        }else{
+            setContent();
+            return this.welcomeStr;
+        }
     }
 }
