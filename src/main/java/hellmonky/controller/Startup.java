@@ -4,11 +4,8 @@ import java.util.HashSet;
 import java.util.Set;
 
 import javax.ws.rs.core.Application;
-import javax.ws.rs.core.Configuration;
-import javax.ws.rs.core.Context;
 
 import hellmonky.functor.simpleLoger.LogUtil;
-import sun.rmi.runtime.Log;
 
 /**
  * Created by yuanlai.xwt on 2017/6/29.

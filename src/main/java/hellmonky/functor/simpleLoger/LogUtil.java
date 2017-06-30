@@ -66,4 +66,12 @@ public class LogUtil {
         logger.error(content,e);
     }
 
+
+    // 增加当前日志记录元信息：
+    public void metaInfo(Class<?> currentClass, String content){
+        LogInfo lf = new LogInfo();
+        lf.setCurrentLogClass(currentClass);
+        lf.setContent(content);
+        logger.info(lf.toString());
+    }
 }
