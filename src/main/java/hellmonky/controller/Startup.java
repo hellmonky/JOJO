@@ -15,7 +15,7 @@ public class Startup extends Application {
 
     @Override
     public Set<Class<?>> getClasses() {
-        LogUtil.getInstance().error("startup process.......");
+        LogUtil.getInstance().error(this.getClass(), "startup process.......");
         //System.out.println("startup process.......");
 
         /**

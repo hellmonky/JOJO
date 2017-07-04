@@ -50,6 +50,7 @@ public class LogUtil {
         return singleton;
     }
 
+    /*
     public void info(String content){
         logger.info(content);
     }
@@ -65,13 +66,34 @@ public class LogUtil {
     public void error(String content, Exception e){
         logger.error(content,e);
     }
-
+    */
 
     // 增加当前日志记录元信息：
-    public void metaInfo(Class<?> currentClass, String content){
+    public void info(Class<?> currentClass, String content){
         LogInfo lf = new LogInfo();
         lf.setCurrentLogClass(currentClass);
         lf.setContent(content);
         logger.info(lf.toString());
+    }
+
+    public void debug(Class<?> currentClass, String content){
+        LogInfo lf = new LogInfo();
+        lf.setCurrentLogClass(currentClass);
+        lf.setContent(content);
+        logger.debug(lf.toString());
+    }
+
+    public void error(Class<?> currentClass, String content){
+        LogInfo lf = new LogInfo();
+        lf.setCurrentLogClass(currentClass);
+        lf.setContent(content);
+        logger.error(lf.toString());
+    }
+
+    public void error(Class<?> currentClass, String content,Exception e){
+        LogInfo lf = new LogInfo();
+        lf.setCurrentLogClass(currentClass);
+        lf.setContent(content);
+        logger.error(lf.toString(),e);
     }
 }

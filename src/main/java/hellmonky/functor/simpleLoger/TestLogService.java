@@ -14,14 +14,11 @@ public class TestLogService {
 
         LogUtil logger = LogUtil.getInstance();
         // 记录debug级别的信息
-        logger.debug("This is debug message.");
+        logger.debug(logger.getClass(), "This is debug message.");
         // 记录info级别的信息
-        logger.info("This is info message.");
+        logger.info(logger.getClass(), "This is info message.");
         // 记录error级别的信息
-        logger.error("This is error message.");
-        //
-        TestLogService testLogService = new TestLogService();
-        logger.metaInfo(testLogService.getClass(),"test metadata log");
+        logger.error(logger.getClass(), "This is error message.");
 
         // stackTrace log
         try{
@@ -30,9 +27,9 @@ public class TestLogService {
             File initialFile = new File(proPath);
             InputStream inputStream = new FileInputStream(initialFile);
         } catch (FileNotFoundException e){
-            logger.error( "file is not exist!", e );
+            logger.error(e.getCause().getClass(),"file is not exist!", e );
         } catch (NullPointerException e) {
-            logger.error( "null point error!", e );
+            logger.error(e.getCause().getClass(), "null point error!", e );
         }
     }
 }
