@@ -93,7 +93,7 @@ public class Welcome {
     @Produces(MediaType.APPLICATION_JSON)
     @Path("{name}")
     public String listPhysicalHost(@PathParam("name") String name) {
-        if(null==name || name.equals("")){
+        if(null==name || "".equals(name)){
             return this.welcomeStr;
         }else{
             setContent();

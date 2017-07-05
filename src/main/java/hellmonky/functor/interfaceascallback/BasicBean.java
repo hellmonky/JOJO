@@ -1,4 +1,4 @@
-package hellmonky.functor.innerInterfaceAsCallback;
+package hellmonky.functor.interfaceascallback;
 
 /**
  * Created by yuanlai.xwt on 2017/7/5.
