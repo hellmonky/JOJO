@@ -6,7 +6,7 @@ import java.util.logging.Handler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-import aliyun.common.log.Log;
+import hellmonky.functor.log.Log;
 
 /**
  * Created by yuanlai.xwt on 2017/7/6.
