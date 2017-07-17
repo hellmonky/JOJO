@@ -6,7 +6,7 @@ package hellmonky.functor.annotationVerification;
  */
 public class TestEntery {
     /*
-    public static void main(String[] args) {
+    public static void ReaderTest(String[] args) {
         TestAnnotationBean testAnnotationBean =new TestAnnotationBean();
 
         testAnnotationBean.setUserId("AAA");
