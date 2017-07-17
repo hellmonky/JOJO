@@ -1,6 +1,6 @@
 package hellmonky.functor.log;
 
-import aliyun.common.log.impl.LogFactory;
+import hellmonky.functor.log.impl.LogFactory;
 
 /**
  * Created by yuanlai.xwt on 2017/7/6.

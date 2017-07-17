@@ -1,6 +1,6 @@
 package hellmonky.functor.log.impl;
 
-import aliyun.common.log.Log;
+import hellmonky.functor.log.Log;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

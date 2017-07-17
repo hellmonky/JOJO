@@ -4,7 +4,7 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ServiceLoader;
 
-import aliyun.common.log.Log;
+import hellmonky.functor.log.Log;
 import org.apache.commons.logging.LogConfigurationException;
 
 /**
