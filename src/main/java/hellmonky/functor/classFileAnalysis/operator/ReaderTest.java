@@ -15,6 +15,8 @@ public class ReaderTest {
                 + ".localhost\\JOJO\\src\\main\\java\\hellmonky\\functor\\classFileAnalysis\\resource\\Bootstrap.class";
             File file = new File(classFilePath);
             FileInputStream inputStream = new FileInputStream(file);
+            System.out.println("analysis class file : ");
+            System.out.println(classFilePath);
             ClassReader.analyze(inputStream);
         }catch (FileNotFoundException e){
             e.printStackTrace();
